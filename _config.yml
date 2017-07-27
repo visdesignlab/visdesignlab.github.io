@@ -8,7 +8,6 @@ twitter_username:
 github_username: visdesignlab
 youtube_username:
 facebook_page:
-license_url: https://raw.githubusercontent.com/Caleydo/caleydo/develop/LICENSE
 safe: false
 lsi: false
 google_analytics: "'UA-69348306-1'"
@@ -20,9 +19,6 @@ gems:
   - jekyll-redirect-from
 
 # Build settings
-markdown: kramdown
-kramdown:
-  input: GFM
 permalink: pretty
 sass:
   sass_dir: _sass
@@ -31,31 +27,18 @@ exclude: ["README.md", ".idea/"]
 
 # Collections
 collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
   persons:
     output: true
-    permalink: /persons/:path/
   publications:
     output: true
-    permalink: /publications/:path/
   thesis:
     output: true
-    permalink: /thesis/:path/
   videos:
     output: false
-    permalink: /videos/:path/
-  datasets:
-    output: false
-    permalink: /datasets/:path/
   institutions:
     output: false
-    permalink: /institutions/:path/
   funding:
     output: false
-    permalink: /funding/:path/
   talks:
     output: false
-    permalink: /talks/:path/
 

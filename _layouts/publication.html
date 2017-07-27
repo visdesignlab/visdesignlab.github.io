@@ -145,20 +145,24 @@ layout: default
     {% endif %}
     {% endfor %}
 
-  <script src="http://code.jquery.com/jquery-latest.min.js"
-          type="text/javascript"></script>
   <script>
   	 //on load
   	 responsive_change_box_order();
   	 //on resize
    	 window.addEventListener('resize', responsive_change_box_order );
 	 
+   // prepend an element before another
+   function prependElement (element, target) {
+     target.parentNode.insertBefore(element, target)
+   }
+
 	 function responsive_change_box_order() {
+      var image = document.querySelector('#publication-image')
 	    if (window.matchMedia("(max-width: 749px)").matches) {
-	        jQuery("#publication-image").remove().prependTo(jQuery(".publication-content-main"));
+        prependElement(image, document.querySelector('.publication-content-main'))
 	    }
 	    else{
-	        jQuery("#publication-image").remove().prependTo(jQuery(".publication-content-aside"));
+        prependElement(image, document.querySelector('.publication-content-aside h1'))
 	    }
 	  }
       // var i = 0;
@@ -166,14 +170,12 @@ layout: default
       //
       //     var pub = publications[i];
       //     i++;
-      //     var bannerImg = $(id + " img");
-      //     bannerImg.attr("alt", pub.shortname)
+      //     var bannerImg = document.querySelector(id + " img");
+      //     bannerImg.alt = pub.shortname;
+      //     bannerImg.src += pub.image_large;
       //
-      //     var src = bannerImg.attr("src");
-      //     bannerImg.attr("src", src + pub.image_large);
-      //
-      //     var bannerLink = $(id + "  a")
-      //     bannerLink.attr("href", pub.url);
+      //     var bannerLink = document.querySelector(id + "  a")
+      //     bannerLink.href = pub.url;
       //
       //     // // shorten title of too long
       //     // var titleLength = -1;
@@ -186,8 +188,8 @@ layout: default
       //     //     pub.title = pub.title.substring(0, titleLength) + "...";
       //     // }
       //
-      //     var bannerText = $(id + " span")
-      //     bannerText.text(pub.title);
+      //     var bannerText = document.querySelector(id + " span")
+      //     bannerText.innerText = pub.title;
       // });
 
   </script>

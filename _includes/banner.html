@@ -22,8 +22,6 @@
             </a>
         </div>
 
-        <script src="http://code.jquery.com/jquery-latest.min.js"
-                type="text/javascript"></script>
         <script>
             publications.sort(function () {
                 return .5 - Math.random();
@@ -34,14 +32,12 @@
 
                 var pub = publications[i];
                 i++;
-                var bannerImg = $(id + " img");
-                bannerImg.attr("alt", pub.shortname)
+                var bannerImg = document.querySelector(id + " img");
+                bannerImg.alt = pub.shortname;
+                bannerImg.src += pub.image_large;
 
-                var src = bannerImg.attr("src");
-                bannerImg.attr("src", src + pub.image_large);
-
-                var bannerLink = $(id + "  a")
-                bannerLink.attr("href", pub.url);
+                var bannerLink = document.querySelector(id + "  a")
+                bannerLink.href = pub.url;
                 
                 // // shorten title of too long
                 // var titleLength = -1;
@@ -54,8 +50,8 @@
                 //     pub.title = pub.title.substring(0, titleLength) + "...";
                 // }
                 
-                var bannerText = $(id + " span")
-                bannerText.text(pub.title);
+                var bannerText = document.querySelector(id + " span")
+                bannerText.innerText = pub.title;
             });
 
         </script>

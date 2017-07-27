@@ -1,8 +1,18 @@
 # VDL Profiles
 
-## Creating a member profile for VDL
+All VDL members are responsible for updating their content regularly.
 
-Please create a profile here. Use the following template. Don't remove rows if you don't have the information right now, just leave the data empty. E.g., if you don't know what your interests are yet, leave the field blank but don't delete "interests".
+
+
+## Creating a VDL Member Profile
+
+Please create a profile using the template here. Save this as a new Markdown
+file with your name as a unique key. In the template, do not remove or delete
+any rows! If you don't have the information right now, just leave the data empty
+or as-is. Please try to fill in something for every row, if possible. Active
+members should select their role, write down some interests, have a webpage, and
+include a photo.
+
 
 ```
 ---
@@ -19,7 +29,7 @@ image: /assets/images/team/lex.jpg
 organization: University of Utah
 position: Assistant Professor
 # use either a local link like here, or a URL
-website: /team/lex 
+website: /team/lex
 interests: Biology Visualization, Multivariate Graphs, Visualization Tools, Exploratory Visualization for Scientists
 #  leave empty if you're active. Add something like "M.S.'16" or "B.S.'17" if you got a degree while at VDL. Add "N" if you left VDS before you got a degree.
 graduated: 
@@ -35,11 +45,11 @@ address: |
     School of Computing, University of Utah <br>
     72 South Central Campus Drive, Room 3887 <br>
     Salt Lake City, Utah 84112
-    
-# flag used to determine whether to show teaching   
+
+# flag used to determine whether to show teaching
 showteaching: true
- 
-phd_students: 
+
+phd_students:
  - nobre
 phd_rotation_students:
  - aljuhani
@@ -50,18 +60,18 @@ former_students:
 ---
 ```
 
-### Picture
-
-Pictures are only necessary for active members of VDL, not for collaborators.
-
-And add a black and white headshot to this folder: 
-https://github.com/visdesignlab/visdesignlab.github.io/tree/master/assets/images/team
-And a colored one here: 
-https://github.com/visdesignlab/visdesignlab.github.io/tree/master/assets/images/team_colored
-Format: square JPG, up to 400x400 px, make sure **this is under 20kb**!
 
 
-## Creating a collaborator profile 
+## Adding a VDL Member Picture
 
-Use "role: collaborator" for collaborators on papers. Note that this isn't strictly necessary, you can just type the person's full name in the author list, but it might be useful if you're collaborating with a person a lot.
+All active members of VDL should add a headshot. Please following the
+[instructions for adding images here](../assets/images/README.md).
+
+
+
+## Creating a Collaborator Profile
+
+Use "`role: collaborator`" for collaborators on papers. Please note that this is
+not strictly necessary. You can just type the person's full name in the author
+list, but it might be useful if you're collaborating with a person a lot.
 
