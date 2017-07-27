@@ -42,8 +42,9 @@ but we recommend using separate branches to submit _pull requests_ for
 additional review and to catch mistakes. See the resources below for details on
 the following:
 
-- [Adding a team member](_persons/README.md)
-- [Adding a paper](_publications/README.md)
+- [Adding team members](_persons/README.md)
+- [Adding publications](_publications/README.md)
+- [Adding images](assets/images/README.md)
 
 
 You can create a branch and add/edit files from the GitHub site. Alternatively,
