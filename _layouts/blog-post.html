@@ -1,0 +1,28 @@
+---
+layout: default
+title: Post | Vis Design Lab
+---
+
+<div class="home">
+
+  <div class="banner">
+  </div>	
+
+  <article class="post-content-main">
+	  
+<h1>News <span class="left-icon"><a href="{{ site.baseurl }}/feed.xml"><i class="fa fa-rss"></i></a></span></h1>
+  <ul class="post-list">
+      <li class="post-list-item">
+		<div class="right-text">{{ page.date | date: "%-d %b %Y" }}</div>
+        <span class="post-list-title">
+          {{ page.title }}
+        </span>
+        <span class="post-list-excerpt">
+          {{ content }}
+        </span>              
+      </li>
+  </ul>
+  <div class="all-news-link"><a class="all-news-link" href="{{ site.baseurl }}/news">See All News</a></div>
+</article>
+
+</div>
