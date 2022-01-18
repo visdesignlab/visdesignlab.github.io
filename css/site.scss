@@ -20,7 +20,7 @@
   $medium-display: new-breakpoint(min-width 750px max-width 1199px $medium-display-columns);
   $large-display: new-breakpoint(min-width 1200px $large-display-columns);
 
-  /* site specific changes that do not fit into base */
+  // Site specific changes that do not fit into base
 
   @mixin navigation-button($color) {
     color: $dark-blue;
@@ -44,8 +44,6 @@
       height: 30px;
       padding: 3px 0;
 
-      //background-color: #444;
-
       transition-delay: 25ms;
       transition-duration: 500ms;
       transition-property: background-color, color;
@@ -55,9 +53,6 @@
       &:hover,
       &:active,
       &.active {
-        //background-color: darken( $color, 20% );
-        //color: #2C3E50;
-        //color: darken( $color, 20% );
         border-bottom: 5px $color solid;
         height: 30px;
       }
@@ -68,10 +63,6 @@
       width: auto;
 
     }
-
-    //  @include media($medium-display) {
-    //    width: 100px;
-    //  }
   }
 
   .nav-icon {
@@ -89,24 +80,12 @@
 
   .nav-text {
     display: inline-block;
-
-    @include media($medium-display) {
-      /*display: none;*/
-    }
-
-    @include media($small-display) {
-      /*display: none;*/
-    }
-
   }
 
   .banner {
     display: block;
-    //height: 40px;
     margin-bottom: 40px;
     margin-top: 40px;
-    //margin-bottom: 20px;
-    //padding-bottom:20px;
     min-height: 20px;
     width: 100%;
 
@@ -154,25 +133,16 @@
       line-height: $base-font-size;
       margin-right: 1%;
       margin-top: $base-line-height;
-      //    margin-bottom: 5px;
-      //	  padding: 15px;
-      //    padding-bottom: 44px;
-      //	  border: 2px solid $dark-blue;
 
       @include span-columns(8);
 
       @include media($medium-display) {
         margin-right: 0.9%;
-        //      padding: 18px;
-        //      padding-bottom: 48px;
       }
 
       @include media($small-display) {
         @include span-columns(12 of 12);
         margin-bottom: 1.5%;
-        //      margin-top: 15px;
-        //      margin-bottom: 5px;
-        //      padding: 15px;
       }
     }
 
@@ -180,8 +150,6 @@
       line-height: $base-font-size;
       margin-bottom: 0.9%;
       margin-right: 0;
-      //	  padding: 10px;
-      //	  border: 2px solid $dark-blue;
 
       @include span-columns(4);
 
@@ -193,16 +161,13 @@
       @include media($small-display) {
         @include span-columns(49 of 100);
         margin-right: 2%;
-        //      margin-bottom: 15px;
       }
     }
 
     #bottom-right-banner-image {
       line-height: $base-font-size;
       @include span-columns(4);
-      //	  padding: 10px;
       margin-right: 0;
-      //	  border: 2px solid $dark-blue;
       @include media($medium-display) {
 
       }
@@ -313,32 +278,11 @@
     color: $publication-color;
   }
 
-  /*@mixin page-title($color) {
-    @include span-columns(12);
-    @include omega();
-    color: $color;
-    background-color: tint($color,95%);
-    padding: 30px 0 0 0;
-    border-bottom: 4px $color solid;
-    margin-bottom: 20px;
-
-    h1 {
-      font-family: $page-title-font-family;
-      font-weight: $page-title-font-weight;
-      font-style: $page-title-font-style;
-      font-size: $page-title-font-size;
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-  }*/
-
   @mixin page-title($color) {
     @include span-columns(12);
     @include omega();
     color: $color;
-    //background-color: tint($color,95%);
     padding: 0;
-    //border-bottom: 4px $color solid;
     margin-bottom: 20px;
 
     h1 {
@@ -421,8 +365,6 @@
 
   @mixin dotted-link-underline() {
     a {
-      //color: #444;
-      //color: $blue2;
       border-bottom: dotted 1px #E64C3C; //note: use of :after code below unfortuenatly doesn't work with line breaks... using fall-back
       position: relative;
       text-decoration: none;
@@ -435,28 +377,10 @@
     a:hover {
       border-bottom-color: transparent;
     }
-
-    //  a:after{
-    //    position: absolute;
-    //    left: 0;
-    //    bottom: 2px;
-    //    content: '';
-    //    width: 100%;
-    //    border-bottom-width: 1px;
-    //    border-bottom-style: dotted;
-    //    display: inline;
-    //	color: #E64C3C;
-    //  }
-    //  a:hover:after{
-    //	color: transparent;
-    //  }
-
   }
 
   @mixin reverse-dotted-link-underline() {
     a {
-      //color: #444;
-      //color: $blue2;
       border-bottom: dotted 1px transparent;
       position: relative;
       text-decoration: none;
@@ -525,17 +449,6 @@
         position: relative;
         text-decoration: none;
       }
-
-      //    a:after{
-      //      position: absolute;
-      //      left: 0;
-      //      bottom: 0;
-      //      content: '';
-      //      width: 100%;
-      //      border-bottom-width: 1px;
-      //      border-bottom-style: dotted;
-      //      display: inline;
-      //    }
     }
 
     font-family: $page-content-font-family;
@@ -639,7 +552,6 @@
 
   .blog-teaser {
     float: left;
-    //background-color: lightgrey;
     margin-bottom: 10px;
 
     @include media($large-display) {
@@ -693,22 +605,11 @@
     text-decoration: none;
   }
 
-  //  a.post-list-link:after{
-  //    position: absolute;
-  //    left: 0;
-  //    bottom: 0;
-  //    content: '';
-  //    width: 100%;
-  //    border-bottom-width: 1px;
-  //    //border-bottom-style: solid;
-  //  }
-
   .post-list-item {
     margin-bottom: 10px;
 
     p {
       margin-bottom: 10px;
-      //display: inline;
     }
 
     b {
@@ -731,10 +632,6 @@
 
   .post-list-title {
     color: $dark-blue;// #F1F2F2;
-    //color: lighten(#F1F2F2,0.5);
-    //background: lighten($home-color, 30%);
-    //border-color: $home-color;
-    //font-family: $sans-serif-font-family;
     display: block;
     font-family: $condensed-font-family;
     font-size: 1.2em;
@@ -757,12 +654,7 @@
       display: flex;
       font-style: normal;
       justify-content: space-between;
-      //display: block;
-      //height: 28px;
       padding: 3px 0;
-
-      //height: 30px;
-      //background-color: #444;
 
       transition-delay: 25ms;
       transition-duration: 500ms;
@@ -773,17 +665,11 @@
       &:hover,
       &:active,
       &.active {
-        //height: 30px;
         border-bottom: 5px $home-color solid;
       }
     }
 
   }
-
-  /*.post-list-excerpt {
-      height:160px;
-      overflow:hidden;
-  }*/
 
 
 
@@ -906,22 +792,14 @@
 
     .project-image-small {
       @include span-columns(1);
-      //float: left;
       margin-bottom: 20px;
       margin-right: 20px;
       margin-top: 5px;
       @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
       @include border-radius(3px);
 
-      // @include media($medium-display) {
-      //   @include span-columns(1.5);
-      // }
-
       @include media($small-display) {
         display: none;
-        //   @include span-columns(1.5);
-      //   margin: 10px 0;
-      //   //width: 80%;
       }
     }
 
@@ -961,12 +839,6 @@
           border-bottom-width: 0;
         }
       }
-
-      /*
-      @include span-columns(10);
-      @include omega;
-      @include single-column-content();
-      */
     }
 
     .paper-author {
@@ -986,40 +858,6 @@
   .talk p {
     margin-bottom: 0;
   }
-
-
-  /*.paper-title {
-    font-family:$condensed-font-family;
-    color:$blue2;
-    font-weight:700;
-    a{
-    font-weight:700;
-    }
-  }*/
-
-
-  // Uncomment this for a sticky footer.
-  //
-  /*
-  .wrapper-for-content-outside-of-footer {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -4em;
-  }
-
-  html, body {
-    height: 100%;
-  }
-
-  .footer-2, .push {
-    height: 17em;
-
-    @include media($large-screen) {
-      height: 4em;
-    }
-  }
-  */
 
   $footer-border-color: $light-gray;
 
@@ -1256,17 +1094,9 @@
   .paper-image-small-aside {
     border: 2px solid $dark-blue;
     height: auto;
-    //float: left;
     margin-bottom: 20px;
     margin-right: 20px;
     width: auto;
-    //@include box-shadow( 1px, 1px, 4px, transparentize( black, 0.75) );
-    //@include border-radius( 3px );
-
-    /*
-    @include span-columns(2);
-    @include single-column-content();
-    */
   }
 
 
@@ -1305,7 +1135,6 @@
     max-width: 100%;
     padding-bottom: 15px;
     width: 350px;
-  // height: 310px;
 
     @include media($large-display) {
       float: right;
