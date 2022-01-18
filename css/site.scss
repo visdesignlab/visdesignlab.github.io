@@ -1,1167 +1,1167 @@
 ---
 ---
- {
-  // scss-lint:disable LeadingZero
-  // scss-lint:disable IdSelector
-  // scss-lint:disable HexNotation
-  // scss-lint:disable ColorVariable
 
-  @import '../_sass/bourbon/bourbon';
-  @import '../_sass/base/base';
-  @import '../_sass/neat/neat';
+// scss-lint:disable LeadingZero
+// scss-lint:disable IdSelector
+// scss-lint:disable HexNotation
+// scss-lint:disable ColorVariable
 
-  @import '../_sass/base/cards';
+@import '../_sass/bourbon/bourbon';
+@import '../_sass/base/base';
+@import '../_sass/neat/neat';
 
-  $small-display-columns: 4;
-  $medium-display-columns: 12;
-  $large-display-columns: 12;
+@import '../_sass/base/cards';
 
-  $small-display: new-breakpoint(max-width 749px $small-display-columns);
-  $medium-display: new-breakpoint(min-width 750px max-width 1199px $medium-display-columns);
-  $large-display: new-breakpoint(min-width 1200px $large-display-columns);
+$small-display-columns: 4;
+$medium-display-columns: 12;
+$large-display-columns: 12;
 
-  // Site specific changes that do not fit into base
+$small-display: new-breakpoint(max-width 749px $small-display-columns);
+$medium-display: new-breakpoint(min-width 750px max-width 1199px $medium-display-columns);
+$large-display: new-breakpoint(min-width 1200px $large-display-columns);
 
-  @mixin navigation-button($color) {
+// Site specific changes that do not fit into base
+
+@mixin navigation-button($color) {
+  color: $dark-blue;
+  font-family: $navigation-button-font-family;
+  font-weight: $navigation-button-font-weight;
+  font-style: $navigation-button-font-style;
+  font-size: $navigation-button-font-size;
+  float: left;
+  text-align: left;
+  margin-right: 30px;
+  width: 80px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    border-bottom: 2px $color solid;
     color: $dark-blue;
-    font-family: $navigation-button-font-family;
-    font-weight: $navigation-button-font-weight;
-    font-style: $navigation-button-font-style;
-    font-size: $navigation-button-font-size;
-    float: left;
-    text-align: left;
-    margin-right: 30px;
-    width: 80px;
+    display: block;
+    height: 30px;
+    padding: 3px 0;
 
-    &:last-child {
-      margin-right: 0;
-    }
+    transition-delay: 25ms;
+    transition-duration: 500ms;
+    transition-property: background-color, color;
+    transition-timing-function: ease;
 
-    a {
-      border-bottom: 2px $color solid;
-      color: $dark-blue;
-      display: block;
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      border-bottom: 5px $color solid;
       height: 30px;
-      padding: 3px 0;
-
-      transition-delay: 25ms;
-      transition-duration: 500ms;
-      transition-property: background-color, color;
-      transition-timing-function: ease;
-
-      &:focus,
-      &:hover,
-      &:active,
-      &.active {
-        border-bottom: 5px $color solid;
-        height: 30px;
-      }
-    }
-
-    @include media($small-display) {
-      margin-right: 40px;
-      width: auto;
-
     }
   }
 
-  .nav-icon {
-    display: inline-block;
-    margin-right: 0.2em;
+  @include media($small-display) {
+    margin-right: 40px;
+    width: auto;
+
+  }
+}
+
+.nav-icon {
+  display: inline-block;
+  margin-right: 0.2em;
+
+  @include media($medium-display) {
+    margin-right: 0;
+  }
+
+  @include media($small-display) {
+    margin-right: 0;
+  }
+}
+
+.nav-text {
+  display: inline-block;
+}
+
+.banner {
+  display: block;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  min-height: 20px;
+  width: 100%;
+
+  img {
+    border: 2px solid $dark-blue;
+  }
+
+  .home-image {
+    margin-bottom: 250px;
+    padding-bottom: 50px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 50px;
+    width: 100%;
+
+    @include media($small-display) {
+      margin-bottom: 100px;
+    }
+  }
+
+  #left-banner-image-title,
+  #top-right-banner-image-title,
+  #bottom-right-banner-image-title {
+    line-height: $base-line-height;
+  }
+
+  .banner-image-title {
+    color: #3376A0;
+    display: block;
+    font-family: $condensed-font-family;
+    font-weight: 500;
+    margin-left: 2px;
+    max-width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include media($small-display) {
+      display: none;
+    }
+  }
+
+  #main-banner-image {
+    float: left;
+    line-height: $base-font-size;
+    margin-right: 1%;
+    margin-top: $base-line-height;
+
+    @include span-columns(8);
 
     @include media($medium-display) {
-      margin-right: 0;
+      margin-right: 0.9%;
     }
 
     @include media($small-display) {
-      margin-right: 0;
+      @include span-columns(12 of 12);
+      margin-bottom: 1.5%;
     }
   }
 
-  .nav-text {
-    display: inline-block;
-  }
-
-  .banner {
-    display: block;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    min-height: 20px;
-    width: 100%;
-
-    img {
-      border: 2px solid $dark-blue;
-    }
-
-    .home-image {
-      margin-bottom: 250px;
-      padding-bottom: 50px;
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 50px;
-      width: 100%;
-
-      @include media($small-display) {
-        margin-bottom: 100px;
-      }
-    }
-
-    #left-banner-image-title,
-    #top-right-banner-image-title,
-    #bottom-right-banner-image-title {
-      line-height: $base-line-height;
-    }
-
-    .banner-image-title {
-      color: #3376A0;
-      display: block;
-      font-family: $condensed-font-family;
-      font-weight: 500;
-      margin-left: 2px;
-      max-width: 95%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      @include media($small-display) {
-        display: none;
-      }
-    }
-
-    #main-banner-image {
-      float: left;
-      line-height: $base-font-size;
-      margin-right: 1%;
-      margin-top: $base-line-height;
-
-      @include span-columns(8);
-
-      @include media($medium-display) {
-        margin-right: 0.9%;
-      }
-
-      @include media($small-display) {
-        @include span-columns(12 of 12);
-        margin-bottom: 1.5%;
-      }
-    }
-
-    #top-right-banner-image {
-      line-height: $base-font-size;
-      margin-bottom: 0.9%;
-      margin-right: 0;
-
-      @include span-columns(4);
-
-      @include media($medium-display) {
-        margin-bottom: 0.7%;
-
-      }
-
-      @include media($small-display) {
-        @include span-columns(49 of 100);
-        margin-right: 2%;
-      }
-    }
-
-    #bottom-right-banner-image {
-      line-height: $base-font-size;
-      @include span-columns(4);
-      margin-right: 0;
-      @include media($medium-display) {
-
-      }
-      @include media($small-display) {
-        @include span-columns(49 of 100);
-      }
-    }
-  }
-
-  .navigation {
-    display: block;
-    height: 40px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-
-    @include media($small-display) {
-      height: 35px;
-      margin-left: 0;
-    }
-  }
-
-  .navigation-buttons {
-    display: block;
-    float: left;
-    padding-bottom: 15px;
-    padding-top: 65px;
-
-    @include media($small-display) {
-      margin-left: 0;
-      padding-bottom: 15px;
-      padding-top: 0;
-    }
-  }
-
-  .logo {
-    float: right;
+  #top-right-banner-image {
+    line-height: $base-font-size;
+    margin-bottom: 0.9%;
     margin-right: 0;
 
-    @include media($small-display) {
-      margin-right: 0;
-      padding-top: 5px;
-    }
-  }
-
-  .logo-header-svg {
-    height: 40px;
-
-    @include media($small-display) {
-      height: 20px;
-    }
-  }
-
-  .wrap {
-    @include outer-container;
-    @include clearfix;
-  }
-
-
-  body {
-    margin: 30px auto 0;
-    width: 750px;
-
-    @include media($large-display) {
-      width: 1200px;
-    }
-
-    @include media($small-display) {
-      margin: 10px auto 0;
-      width: 300px;
-    }
-  }
-
-  .home-button {
-    @include navigation-button($home-color);
-  }
-
-  .team-button {
-    @include navigation-button($team-color);
-  }
-
-
-  .publications-button {
-    @include navigation-button($home-color);
-    width: 120px;
-  }
-
-  .blog-button {
-    @include navigation-button($team-color);
-  }
-
-
-  .culture-button {
-    @include navigation-button($home-color);
-  }
-
-  .positions-button {
-    @include navigation-button($team-color);
-  }
-
-
-
-  .project-button {
-    @include navigation-button($home-color);
-  }
-
-  .award {
-    color: $publication-color;
-  }
-
-  @mixin page-title($color) {
-    @include span-columns(12);
-    @include omega();
-    color: $color;
-    padding: 0;
-    margin-bottom: 20px;
-
-    h1 {
-      border-bottom: 0;
-      font-family: $page-title-font-family;
-      font-size: $page-title-font-size;
-      font-style: $page-title-font-style;
-      font-weight: $page-title-font-weight;
-      margin-bottom: 0;
-    }
-  }
-
-
-  @mixin subpage-title($color) {
-    @include page-title($color);
-
-    h1 {
-      font-size: $page-title-font-size * 0.5;
-    }
-  }
-
-  .projects-title {
-    @include page-title($project-color);
-  }
-
-  .project-title {
-    @include subpage-title($project-color);
-  }
-
-  .person-title {
-    @include subpage-title($team-color);
-  }
-
-  .team-title {
-    @include page-title($team-color);
-  }
-
-  .funding-title {
-    @include subpage-title($neutral-color);
-  }
-
-  .acknowledgements-title {
-    @include subpage-title($neutral-color);
-  }
-
-  .post-title {
-    @include subpage-title($publication-color);
-  }
-
-  .home-title {
-    @include page-title($home-color);
-  }
-
-  .publications-title {
-    @include page-title($publication-color);
-  }
-
-  .publication-title {
-    @include subpage-title($publication-color);
-
-    h1 {
-      color: $blue2;
-    }
-  }
-
-  .download-title {
-    @include page-title($download-color);
-  }
-
-  .release-title {
-    @include subpage-title($download-color);
-  }
-
-  @mixin single-column-content() {
-    @include media($small-display) {
-      @include span-columns($small-display-columns);
-      @include omega();
-    }
-  }
-
-  @mixin dotted-link-underline() {
-    a {
-      border-bottom: dotted 1px #E64C3C; //note: use of :after code below unfortuenatly doesn't work with line breaks... using fall-back
-      position: relative;
-      text-decoration: none;
-      -moz-transition: border-bottom-color 0.2s ease-in-out;
-      -ms-transition: border-bottom-color 0.2s ease-in-out;
-      -webkit-transition: border-bottom-color 0.2s ease-in-out;
-      transition: border-bottom-color 0.2s ease-in-out;
-    }
-
-    a:hover {
-      border-bottom-color: transparent;
-    }
-  }
-
-  @mixin reverse-dotted-link-underline() {
-    a {
-      border-bottom: dotted 1px transparent;
-      position: relative;
-      text-decoration: none;
-      -moz-transition: border-bottom-color 0.2s ease-in-out;
-      -ms-transition: border-bottom-color 0.2s ease-in-out;
-      -webkit-transition: border-bottom-color 0.2s ease-in-out;
-      transition: border-bottom-color 0.2s ease-in-out;
-    }
-
-    a:hover {
-      border-bottom-color: #E64C3C;
-    }
-  }
-
-
-  @mixin page-content() {
-    // for small displays as single column
-    @include single-column-content();
-
-    ul {
-      @extend %default-ul;
-      @include dotted-link-underline;
-
-      a {
-        color: #444;
-      }
-    }
-
-    p {
-      @include dotted-link-underline;
-
-      a {
-        color: #444;
-      }
-    }
-
-    font-family: $page-content-font-family;
-    font-weight: $page-content-font-weight;
-    font-style: $page-content-font-style;
-    font-size: $page-content-font-size;
-    text-rendering: optimizeLegibility; // Fix the character spacing for headings
-
-    .right-icon {
-      a {
-        color: inherit;
-        font-size: $base-font-size * 0.75;
-      }
-
-      float: right;
-    }
-
-  }
-
-  @mixin page-meta() {
-    // for small displays as single column
-    @include single-column-content();
-
-    ul {
-      @extend %default-ul;
-    }
-
-    p {
-      a {
-        border-bottom: dotted 1px #E64C3C;
-        color: #444;
-        position: relative;
-        text-decoration: none;
-      }
-    }
-
-    font-family: $page-content-font-family;
-    font-weight: $page-content-font-weight;
-    font-style: $page-content-font-style;
-    font-size: $page-content-font-size;
-    text-rendering: optimizeLegibility; // Fix the character spacing for headings
-  }
-
-
-  .project-content {
-    @include page-content();
-    @include span-columns(12);
-    @include omega();
-  }
-
-  .project-content-main {
-    @include page-content();
-    @include span-columns(8);
-  }
-
-  .project-content-aside {
-    @include page-content();
     @include span-columns(4);
-    @include omega();
-  }
-
-  .project-meta {
-    @include page-meta();
-    @include span-columns(9);
-    @include omega();
-  }
-
-  .person-content {
-    @include page-content();
-  }
-
-  .person-meta {
-    @include page-meta();
-  }
-
-  .funding-content {
-    @include page-content();
-    @include span-columns(12);
-    @include omega();
-  }
-
-  .funding-meta {
-    @include page-meta();
-  }
-
-  .acknowledgements-content {
-    @include page-content();
-  }
-
-  .acknowledgements-meta {
-    @include page-meta();
-  }
-
-  .home-content-main {
-    @include page-content();
-    @include span-columns(8);
-  }
-
-  .home-content-aside {
-    @include page-content();
-    @include span-columns(4);
-    @include omega();
-  }
-
-  .home-meta {
-    @include page-meta();
-    @include span-columns(12);
-  }
-
-  .post-content {
-    @include page-content();
-  }
-
-  .post-content-main {
-    @include page-content();
-    @include span-columns(8);
-  }
-
-  .post-content-aside {
-    @include page-content();
-    @include span-columns(0);
-    @include omega();
-  }
-
-  .post-meta {
-    @include page-meta();
-  }
-
-  .blog-page {
-    @include page-content();
-    @include span-columns(12);
-    @include omega();
-  }
-
-
-  .blog-teaser {
-    float: left;
-    margin-bottom: 10px;
-
-    @include media($large-display) {
-      height: 550px;
-      overflow: hidden;
-      @include span-columns(5.7);
-
-    }
 
     @include media($medium-display) {
-      @include span-columns(12);
+      margin-bottom: 0.7%;
+
     }
 
-    @include media(small-display) {
-      @include span-columns(12);
-    }
-  }
-
-  .blog-teaser:nth-child(even) {
-    @include media($large-display) {
-      float: right;
+    @include media($small-display) {
+      @include span-columns(49 of 100);
+      margin-right: 2%;
     }
   }
 
-  a.project-website {
-    @include reverse-dotted-link-underline;
+  #bottom-right-banner-image {
+    line-height: $base-font-size;
+    @include span-columns(4);
+    margin-right: 0;
+    @include media($medium-display) {
+
+    }
+    @include media($small-display) {
+      @include span-columns(49 of 100);
+    }
+  }
+}
+
+.navigation {
+  display: block;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+
+  @include media($small-display) {
+    height: 35px;
+    margin-left: 0;
+  }
+}
+
+.navigation-buttons {
+  display: block;
+  float: left;
+  padding-bottom: 15px;
+  padding-top: 65px;
+
+  @include media($small-display) {
+    margin-left: 0;
+    padding-bottom: 15px;
+    padding-top: 0;
+  }
+}
+
+.logo {
+  float: right;
+  margin-right: 0;
+
+  @include media($small-display) {
+    margin-right: 0;
+    padding-top: 5px;
+  }
+}
+
+.logo-header-svg {
+  height: 40px;
+
+  @include media($small-display) {
+    height: 20px;
+  }
+}
+
+.wrap {
+  @include outer-container;
+  @include clearfix;
+}
+
+
+body {
+  margin: 30px auto 0;
+  width: 750px;
+
+  @include media($large-display) {
+    width: 1200px;
+  }
+
+  @include media($small-display) {
+    margin: 10px auto 0;
+    width: 300px;
+  }
+}
+
+.home-button {
+  @include navigation-button($home-color);
+}
+
+.team-button {
+  @include navigation-button($team-color);
+}
+
+
+.publications-button {
+  @include navigation-button($home-color);
+  width: 120px;
+}
+
+.blog-button {
+  @include navigation-button($team-color);
+}
+
+
+.culture-button {
+  @include navigation-button($home-color);
+}
+
+.positions-button {
+  @include navigation-button($team-color);
+}
+
+
+
+.project-button {
+  @include navigation-button($home-color);
+}
+
+.award {
+  color: $publication-color;
+}
+
+@mixin page-title($color) {
+  @include span-columns(12);
+  @include omega();
+  color: $color;
+  padding: 0;
+  margin-bottom: 20px;
+
+  h1 {
+    border-bottom: 0;
+    font-family: $page-title-font-family;
+    font-size: $page-title-font-size;
+    font-style: $page-title-font-style;
+    font-weight: $page-title-font-weight;
+    margin-bottom: 0;
+  }
+}
+
+
+@mixin subpage-title($color) {
+  @include page-title($color);
+
+  h1 {
+    font-size: $page-title-font-size * 0.5;
+  }
+}
+
+.projects-title {
+  @include page-title($project-color);
+}
+
+.project-title {
+  @include subpage-title($project-color);
+}
+
+.person-title {
+  @include subpage-title($team-color);
+}
+
+.team-title {
+  @include page-title($team-color);
+}
+
+.funding-title {
+  @include subpage-title($neutral-color);
+}
+
+.acknowledgements-title {
+  @include subpage-title($neutral-color);
+}
+
+.post-title {
+  @include subpage-title($publication-color);
+}
+
+.home-title {
+  @include page-title($home-color);
+}
+
+.publications-title {
+  @include page-title($publication-color);
+}
+
+.publication-title {
+  @include subpage-title($publication-color);
+
+  h1 {
+    color: $blue2;
+  }
+}
+
+.download-title {
+  @include page-title($download-color);
+}
+
+.release-title {
+  @include subpage-title($download-color);
+}
+
+@mixin single-column-content() {
+  @include media($small-display) {
+    @include span-columns($small-display-columns);
+    @include omega();
+  }
+}
+
+@mixin dotted-link-underline() {
+  a {
+    border-bottom: dotted 1px #E64C3C; //note: use of :after code below unfortuenatly doesn't work with line breaks... using fall-back
+    position: relative;
+    text-decoration: none;
+    -moz-transition: border-bottom-color 0.2s ease-in-out;
+    -ms-transition: border-bottom-color 0.2s ease-in-out;
+    -webkit-transition: border-bottom-color 0.2s ease-in-out;
+    transition: border-bottom-color 0.2s ease-in-out;
+  }
+
+  a:hover {
+    border-bottom-color: transparent;
+  }
+}
+
+@mixin reverse-dotted-link-underline() {
+  a {
+    border-bottom: dotted 1px transparent;
+    position: relative;
+    text-decoration: none;
+    -moz-transition: border-bottom-color 0.2s ease-in-out;
+    -ms-transition: border-bottom-color 0.2s ease-in-out;
+    -webkit-transition: border-bottom-color 0.2s ease-in-out;
+    transition: border-bottom-color 0.2s ease-in-out;
+  }
+
+  a:hover {
+    border-bottom-color: #E64C3C;
+  }
+}
+
+
+@mixin page-content() {
+  // for small displays as single column
+  @include single-column-content();
+
+  ul {
+    @extend %default-ul;
+    @include dotted-link-underline;
+
+    a {
+      color: #444;
+    }
+  }
+
+  p {
+    @include dotted-link-underline;
+
+    a {
+      color: #444;
+    }
+  }
+
+  font-family: $page-content-font-family;
+  font-weight: $page-content-font-weight;
+  font-style: $page-content-font-style;
+  font-size: $page-content-font-size;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+
+  .right-icon {
+    a {
+      color: inherit;
+      font-size: $base-font-size * 0.75;
+    }
+
+    float: right;
+  }
+
+}
+
+@mixin page-meta() {
+  // for small displays as single column
+  @include single-column-content();
+
+  ul {
+    @extend %default-ul;
+  }
+
+  p {
+    a {
+      border-bottom: dotted 1px #E64C3C;
+      color: #444;
+      position: relative;
+      text-decoration: none;
+    }
+  }
+
+  font-family: $page-content-font-family;
+  font-weight: $page-content-font-weight;
+  font-style: $page-content-font-style;
+  font-size: $page-content-font-size;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+}
+
+
+.project-content {
+  @include page-content();
+  @include span-columns(12);
+  @include omega();
+}
+
+.project-content-main {
+  @include page-content();
+  @include span-columns(8);
+}
+
+.project-content-aside {
+  @include page-content();
+  @include span-columns(4);
+  @include omega();
+}
+
+.project-meta {
+  @include page-meta();
+  @include span-columns(9);
+  @include omega();
+}
+
+.person-content {
+  @include page-content();
+}
+
+.person-meta {
+  @include page-meta();
+}
+
+.funding-content {
+  @include page-content();
+  @include span-columns(12);
+  @include omega();
+}
+
+.funding-meta {
+  @include page-meta();
+}
+
+.acknowledgements-content {
+  @include page-content();
+}
+
+.acknowledgements-meta {
+  @include page-meta();
+}
+
+.home-content-main {
+  @include page-content();
+  @include span-columns(8);
+}
+
+.home-content-aside {
+  @include page-content();
+  @include span-columns(4);
+  @include omega();
+}
+
+.home-meta {
+  @include page-meta();
+  @include span-columns(12);
+}
+
+.post-content {
+  @include page-content();
+}
+
+.post-content-main {
+  @include page-content();
+  @include span-columns(8);
+}
+
+.post-content-aside {
+  @include page-content();
+  @include span-columns(0);
+  @include omega();
+}
+
+.post-meta {
+  @include page-meta();
+}
+
+.blog-page {
+  @include page-content();
+  @include span-columns(12);
+  @include omega();
+}
+
+
+.blog-teaser {
+  float: left;
+  margin-bottom: 10px;
+
+  @include media($large-display) {
+    height: 550px;
+    overflow: hidden;
+    @include span-columns(5.7);
+
+  }
+
+  @include media($medium-display) {
+    @include span-columns(12);
+  }
+
+  @include media(small-display) {
+    @include span-columns(12);
+  }
+}
+
+.blog-teaser:nth-child(even) {
+  @include media($large-display) {
+    float: right;
+  }
+}
+
+a.project-website {
+  @include reverse-dotted-link-underline;
+  color: $dark-blue;
+  font-family: $condensed-font-family;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.all-news-link {
+  @include dotted-link-underline;
+
+  a {
     color: $dark-blue;
     font-family: $condensed-font-family;
     font-size: 1em;
     font-weight: 700;
   }
-
-  .all-news-link {
-    @include dotted-link-underline;
-
-    a {
-      color: $dark-blue;
-      font-family: $condensed-font-family;
-      font-size: 1em;
-      font-weight: 700;
-    }
-  }
+}
 
 
 
-  a.post-list-link {
-    color: #444;
-    font-size: 0.9em;
-    font-style: italic;
-    position: relative;
-    text-decoration: none;
-  }
+a.post-list-link {
+  color: #444;
+  font-size: 0.9em;
+  font-style: italic;
+  position: relative;
+  text-decoration: none;
+}
 
-  .post-list-item {
+.post-list-item {
+  margin-bottom: 10px;
+
+  p {
     margin-bottom: 10px;
-
-    p {
-      margin-bottom: 10px;
-    }
-
-    b {
-      color: #3376A0;
-    }
   }
 
-  // nested fonts in the blog posts should be
-  .post-list-item h2 {
-    font-size: $base-font-size;
+  b {
+    color: #3376A0;
+  }
+}
+
+// nested fonts in the blog posts should be
+.post-list-item h2 {
+  font-size: $base-font-size;
+}
+
+.post-list-item h3 {
+  font-size: $base-font-size;
+}
+
+.post-list-item h4 {
+  font-size: $base-font-size;
+}
+
+.post-list-title {
+  color: $dark-blue;// #F1F2F2;
+  display: block;
+  font-family: $condensed-font-family;
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding: 5px;
+  padding-left: 0;
+
+  .right-text {
+    font-size: 1em;
+    font-weight: 400;
+    padding-left: 10px;
+    white-space: nowrap;
   }
 
-  .post-list-item h3 {
-    font-size: $base-font-size;
-  }
-
-  .post-list-item h4 {
-    font-size: $base-font-size;
-  }
-
-  .post-list-title {
-    color: $dark-blue;// #F1F2F2;
-    display: block;
-    font-family: $condensed-font-family;
-    font-size: 1.2em;
+  a {
+    border-bottom: 2px $home-color solid;
+    color: $dark-blue;
+    display: flex;
     font-style: normal;
-    font-weight: 700;
-    margin-bottom: 15px;
-    padding: 5px;
-    padding-left: 0;
+    justify-content: space-between;
+    padding: 3px 0;
 
-    .right-text {
-      font-size: 1em;
-      font-weight: 400;
-      padding-left: 10px;
-      white-space: nowrap;
-    }
+    transition-delay: 25ms;
+    transition-duration: 500ms;
+    transition-property: background-color, color;
+    transition-timing-function: ease;
 
-    a {
-      border-bottom: 2px $home-color solid;
-      color: $dark-blue;
-      display: flex;
-      font-style: normal;
-      justify-content: space-between;
-      padding: 3px 0;
-
-      transition-delay: 25ms;
-      transition-duration: 500ms;
-      transition-property: background-color, color;
-      transition-timing-function: ease;
-
-      &:focus,
-      &:hover,
-      &:active,
-      &.active {
-        border-bottom: 5px $home-color solid;
-      }
-    }
-
-  }
-
-
-
-  // author and date for a blog post
-  .post-meta {
-    color: #636363;
-    font-size: 14px;
-    font-style: italic;
-  }
-
-  .publication-content {
-    @include page-content();
-    @include span-columns(12);
-    @include omega();
-  }
-
-  .publication-content-main {
-    @include page-content();
-    @include span-columns(8);
-  }
-
-  .publication-content-aside {
-    @include page-content();
-    @include span-columns(4);
-    @include omega();
-
-    ul {
-      @extend %default-ul;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .video {
-      margin: auto;
-      margin-left: 0;
-
-      @include media($large-display) {
-        width: 100%;
-      }
-    }
-
-  }
-
-  .publications-content {
-    @include page-content();
-    @include span-columns(12);
-  }
-
-  .publication-meta {
-    @include page-meta();
-  }
-
-  .release-content {
-    @include page-content();
-  }
-
-  .release-meta {
-    @include page-meta();
-  }
-
-
-  .download-content {
-    @include page-content();
-  }
-
-  .download-meta {
-    @include page-meta();
-  }
-
-
-  @mixin desaturation($percentage) {
-    -webkit-filter: grayscale($percentage);
-    -moz-filter: grayscale($percentage);
-    filter: grayscale($percentage);
-  }
-
-  @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    border-radius: $radius;
-  }
-
-  @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-    -webkit-box-shadow: $top $left $blur $color #{$inset};
-    -moz-box-shadow: $top $left $blur $color #{$inset};
-    box-shadow: $top $left $blur $color #{$inset};
-  }
-
-  .paper-list-block {
-    display: block;
-    margin-bottom: 20px;
-    min-height: 120px;
-
-    @include media($medium-display) {
-      margin-bottom: 40px;
-    }
-
-    .paper-image-small {
-      @include span-columns(2.5);
-      margin-bottom: 20px;
-      margin-right: 20px;
-      margin-top: 5px;
-      @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
-      @include border-radius(3px);
-
-      @include media($large-display) {
-      }
-
-      @include media($medium-display) {
-        @include span-columns(3.5);
-      }
-
-      @include media($small-display) {
-        margin: 10px 0;
-        width: 80%;
-      }
-    }
-
-    .project-image-small {
-      @include span-columns(1);
-      margin-bottom: 20px;
-      margin-right: 20px;
-      margin-top: 5px;
-      @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
-      @include border-radius(3px);
-
-      @include media($small-display) {
-        display: none;
-      }
-    }
-
-    p.pubs {
-      margin: 0 0 0 1.3em;
-
-      @include media($small-display) {
-        margin: 0.5em 0 2em;
-        width: 100%;
-      }
-    }
-
-    p {
-      @include span-columns(9);
-      font-family: $light-condensed-font-family;
-      font-size: 0.9em;
-      font-weight: 300;
-
-      @include media($medium-display) {
-        @include span-columns(8.4);
-      }
-
-      @include media($small-display) {
-        width: 100%;
-      }
-
-
-      .paper-title {
-        @include reverse-dotted-link-underline;
-
-        a {
-          color: $blue2;
-          font-weight: 700;
-        }
-
-        a:after {
-          border-bottom-width: 0;
-        }
-      }
-    }
-
-    .paper-author {
-      font-family: $sans-serif-font-family;
-      font-size: $page-content-font-size * 0.9;
-      font-weight: 300;
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      border-bottom: 5px $home-color solid;
     }
   }
 
-  .talk {
-    font-family: $sans-serif-font-family;
-    font-size: $page-content-font-size * 0.8;
-    font-weight: 300;
-    margin-bottom: 10px;
+}
+
+
+
+// author and date for a blog post
+.post-meta {
+  color: #636363;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.publication-content {
+  @include page-content();
+  @include span-columns(12);
+  @include omega();
+}
+
+.publication-content-main {
+  @include page-content();
+  @include span-columns(8);
+}
+
+.publication-content-aside {
+  @include page-content();
+  @include span-columns(4);
+  @include omega();
+
+  ul {
+    @extend %default-ul;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
-
-  .talk p {
-    margin-bottom: 0;
-  }
-
-  $footer-border-color: $light-gray;
-
-  footer {
-    @include span-columns(12);
-    @include omega();
-
-    .footer-content {
-      @include span-columns(12);
-      @include omega();
-      @include single-column-content();
-    }
-
-    $footer-background: $base-background-color;
-    $footer-color: black;
-    $footer-link-color: $footer-color; //transparentize($footer-color, .6);
-    $footer-disclaimer-color: $footer-color; //transparentize($footer-color, .6);
-
-    background: $footer-background;
-    border-top: 4px solid $footer-border-color;
-    margin-top: 15px;
-    padding-top: 15px;
-    width: 100%;
-
-    .logo-footer-svg {
-      height: 50px;
-
-      @include media($small-display) {
-        height: 20px;
-      }
-    }
-
-    .footer-logo {
-      display: block;
-      text-align: center;
-    }
-
-    .institution-logo {
-      height: 50px;
-
-      @include media($small-display) {
-        height: 20px;
-      }
-    }
-
-    .footer-text {
-      font-family: $footer-content-font-family;
-      font-size: $footer-content-font-size;
-
-      @include media($small-display) {
-        display: none;
-      }
-
-    }
-
-    ul {
-      display: inline-block;
-      margin-bottom: 0.5em;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @mixin footer-list($padding-default, $padding-small) {
-      float: right;
-      position: relative;
-      left: -50%;
-
-      ul {
-        left: 50%;
-        position: relative;
-
-        li {
-          float: left;
-          opacity: 0.73;
-          padding-left: $padding-default;
-          padding-right: $padding-default;
-
-          @include media(small-display) {
-            padding-left: $padding-small;
-            padding-right: $padding-small;
-          }
-
-          &:last-child {
-            padding-right: 0;
-          }
-
-          &:first-child {
-            padding-left: 0;
-          }
-
-          &:hover {
-            opacity: 1;
-          }
-
-          a {
-            color: $footer-link-color;
-          }
-        }
-      }
-    }
-
-    .footer-list-social {
-      @include footer-list(0.75em, 0.5em);
-    }
-
-    .footer-list-institutions {
-      @include footer-list(0.5em, 0);
-    }
-
-    .footer-disclaimer {
-      display: block;
-      margin-top: 0.25em;
-      opacity: 0.33;
-
-      p {
-        font-family: $sans-serif-font-family;
-        font-size: $footer-content-font-size * 1.2;
-        font-weight: 700;
-        text-align: center;
-      }
-    }
-  }
-
 
   .video {
     margin: auto;
     margin-left: 0;
 
     @include media($large-display) {
-      width: 75%;
+      width: 100%;
     }
   }
 
-  .video-wrapper {
-    height: 0;
-    padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
-    position: relative;
+}
+
+.publications-content {
+  @include page-content();
+  @include span-columns(12);
+}
+
+.publication-meta {
+  @include page-meta();
+}
+
+.release-content {
+  @include page-content();
+}
+
+.release-meta {
+  @include page-meta();
+}
+
+
+.download-content {
+  @include page-content();
+}
+
+.download-meta {
+  @include page-meta();
+}
+
+
+@mixin desaturation($percentage) {
+  -webkit-filter: grayscale($percentage);
+  -moz-filter: grayscale($percentage);
+  filter: grayscale($percentage);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow: $top $left $blur $color #{$inset};
+  -moz-box-shadow: $top $left $blur $color #{$inset};
+  box-shadow: $top $left $blur $color #{$inset};
+}
+
+.paper-list-block {
+  display: block;
+  margin-bottom: 20px;
+  min-height: 120px;
+
+  @include media($medium-display) {
+    margin-bottom: 40px;
   }
 
-  iframe:not(.skip-absolute) {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-
-  .centered {
-    left: 50%;
-    margin-left: -100px;
-    margin-top: -163px;
-    position: fixed;
-    top: 50%;
-  }
-
-  .logo-404-svg {
-    width: 200px;
-  }
-
-  .message-404 {
-    color: black;
-    font-family: $page-content-font-family;
-    font-size: $page-content-font-size * 2;
-    font-style: normal;
-    font-weight: 700;
-    margin-top: 20px;
-    text-align: center;
-
-    a {
-      color: black;
-
-      &:hover,
-      &:active,
-      &:visited {
-        color: black;
-      }
-    }
-  }
-
-  .rule {
-    border-top: 4px solid $footer-border-color;
-    display: block;
-    height: 24px;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-bottom: 5px;
-    padding-top: 20px;
-  }
-
-  .publication-content-main {
-    .citation {
-      p {
-        .paper-title {
-          color: $blue2;
-          font-family: $condensed-font-family;
-          font-weight: 700;
-        }
-
-        .paper-citation {
-          font-family: $italicized-font-family;
-        }
-      }
-
-    }
-
-    i {
-      color: $blue2;
-    }
-
-  }
-
-  .publication-content-aside {
-    i {
-      color: $blue2;
-    }
-
-    h1 {
-      padding-top: 0;
-
-    }
-
-    h1:first-child {
-      margin-top: 0;
-    }
-
-    .video {
-      p {
-        color: $blue2;
-        font-size: 0.9em;
-      }
-    }
-  }
-
-  .paper-image-small-aside {
-    border: 2px solid $dark-blue;
-    height: auto;
+  .paper-image-small {
+    @include span-columns(2.5);
     margin-bottom: 20px;
     margin-right: 20px;
-    width: auto;
-  }
+    margin-top: 5px;
+    @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
+    @include border-radius(3px);
 
+    @include media($large-display) {
+    }
 
-  .institution-logo {
-    height: 80px;
+    @include media($medium-display) {
+      @include span-columns(3.5);
+    }
 
     @include media($small-display) {
-      height: 60px;
+      margin: 10px 0;
+      width: 80%;
     }
   }
 
-  // publication's bib entry
-  pre.bibtex {
-    background: #f3f3f3;
-    color: #636363;
-    overflow-x: auto;
-    padding: 20px;
+  .project-image-small {
+    @include span-columns(1);
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
+    @include border-radius(3px);
+
+    @include media($small-display) {
+      display: none;
+    }
   }
 
-  // team page in separate sass file
-  @import '../_sass/team';
+  p.pubs {
+    margin: 0 0 0 1.3em;
 
-  .social {
+    @include media($small-display) {
+      margin: 0.5em 0 2em;
+      width: 100%;
+    }
+  }
+
+  p {
+    @include span-columns(9);
+    font-family: $light-condensed-font-family;
+    font-size: 0.9em;
+    font-weight: 300;
+
+    @include media($medium-display) {
+      @include span-columns(8.4);
+    }
+
+    @include media($small-display) {
+      width: 100%;
+    }
+
+
+    .paper-title {
+      @include reverse-dotted-link-underline;
+
+      a {
+        color: $blue2;
+        font-weight: 700;
+      }
+
+      a:after {
+        border-bottom-width: 0;
+      }
+    }
+  }
+
+  .paper-author {
+    font-family: $sans-serif-font-family;
+    font-size: $page-content-font-size * 0.9;
+    font-weight: 300;
+  }
+}
+
+.talk {
+  font-family: $sans-serif-font-family;
+  font-size: $page-content-font-size * 0.8;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.talk p {
+  margin-bottom: 0;
+}
+
+$footer-border-color: $light-gray;
+
+footer {
+  @include span-columns(12);
+  @include omega();
+
+  .footer-content {
+    @include span-columns(12);
+    @include omega();
+    @include single-column-content();
+  }
+
+  $footer-background: $base-background-color;
+  $footer-color: black;
+  $footer-link-color: $footer-color; //transparentize($footer-color, .6);
+  $footer-disclaimer-color: $footer-color; //transparentize($footer-color, .6);
+
+  background: $footer-background;
+  border-top: 4px solid $footer-border-color;
+  margin-top: 15px;
+  padding-top: 15px;
+  width: 100%;
+
+  .logo-footer-svg {
+    height: 50px;
+
+    @include media($small-display) {
+      height: 20px;
+    }
+  }
+
+  .footer-logo {
     display: block;
-    margin: auto;
-    padding: 15px;
+    text-align: center;
   }
 
+  .institution-logo {
+    height: 50px;
 
-  // Extra, copyright-free images at the bottom of a publications page.
-  .supplement-image {
-    border: 2px solid $base-font-color;
-  }
-
-  .supplement-image-div {
-    max-width: 100%;
-    padding-bottom: 15px;
-    width: 350px;
-
-    @include media($large-display) {
-      float: right;
+    @include media($small-display) {
+      height: 20px;
     }
   }
 
-  .supplement-image-div:nth-of-type(2n) {
-    @include media($large-display) {
-      float: left;
+  .footer-text {
+    font-family: $footer-content-font-family;
+    font-size: $footer-content-font-size;
+
+    @include media($small-display) {
+      display: none;
+    }
+
+  }
+
+  ul {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @mixin footer-list($padding-default, $padding-small) {
+    float: right;
+    position: relative;
+    left: -50%;
+
+    ul {
+      left: 50%;
+      position: relative;
+
+      li {
+        float: left;
+        opacity: 0.73;
+        padding-left: $padding-default;
+        padding-right: $padding-default;
+
+        @include media(small-display) {
+          padding-left: $padding-small;
+          padding-right: $padding-small;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+
+        a {
+          color: $footer-link-color;
+        }
+      }
     }
   }
 
-  .supplement-image-div a:link {
-    color: #2B2F33;
-    text-decoration: none;
+  .footer-list-social {
+    @include footer-list(0.75em, 0.5em);
   }
 
-  .supplement-image-div a:visited {
-    color: #2B2F33;
-    text-decoration: none;
+  .footer-list-institutions {
+    @include footer-list(0.5em, 0);
   }
 
-  .supplement-image-caption {
-    height: 40px;
+  .footer-disclaimer {
+    display: block;
+    margin-top: 0.25em;
+    opacity: 0.33;
+
+    p {
+      font-family: $sans-serif-font-family;
+      font-size: $footer-content-font-size * 1.2;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+}
+
+
+.video {
+  margin: auto;
+  margin-left: 0;
+
+  @include media($large-display) {
+    width: 75%;
+  }
+}
+
+.video-wrapper {
+  height: 0;
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+  position: relative;
+}
+
+iframe:not(.skip-absolute) {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.centered {
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -163px;
+  position: fixed;
+  top: 50%;
+}
+
+.logo-404-svg {
+  width: 200px;
+}
+
+.message-404 {
+  color: black;
+  font-family: $page-content-font-family;
+  font-size: $page-content-font-size * 2;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 20px;
+  text-align: center;
+
+  a {
+    color: black;
+
+    &:hover,
+    &:active,
+    &:visited {
+      color: black;
+    }
+  }
+}
+
+.rule {
+  border-top: 4px solid $footer-border-color;
+  display: block;
+  height: 24px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+}
+
+.publication-content-main {
+  .citation {
+    p {
+      .paper-title {
+        color: $blue2;
+        font-family: $condensed-font-family;
+        font-weight: 700;
+      }
+
+      .paper-citation {
+        font-family: $italicized-font-family;
+      }
+    }
+
   }
 
-  .fa {
-    min-width: 18px;
+  i {
+    color: $blue2;
   }
- }
+
+}
+
+.publication-content-aside {
+  i {
+    color: $blue2;
+  }
+
+  h1 {
+    padding-top: 0;
+
+  }
+
+  h1:first-child {
+    margin-top: 0;
+  }
+
+  .video {
+    p {
+      color: $blue2;
+      font-size: 0.9em;
+    }
+  }
+}
+
+.paper-image-small-aside {
+  border: 2px solid $dark-blue;
+  height: auto;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: auto;
+}
+
+
+.institution-logo {
+  height: 80px;
+
+  @include media($small-display) {
+    height: 60px;
+  }
+}
+
+// publication's bib entry
+pre.bibtex {
+  background: #f3f3f3;
+  color: #636363;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+// team page in separate sass file
+@import '../_sass/team';
+
+.social {
+  display: block;
+  margin: auto;
+  padding: 15px;
+}
+
+
+// Extra, copyright-free images at the bottom of a publications page.
+.supplement-image {
+  border: 2px solid $base-font-color;
+}
+
+.supplement-image-div {
+  max-width: 100%;
+  padding-bottom: 15px;
+  width: 350px;
+
+  @include media($large-display) {
+    float: right;
+  }
+}
+
+.supplement-image-div:nth-of-type(2n) {
+  @include media($large-display) {
+    float: left;
+  }
+}
+
+.supplement-image-div a:link {
+  color: #2B2F33;
+  text-decoration: none;
+}
+
+.supplement-image-div a:visited {
+  color: #2B2F33;
+  text-decoration: none;
+}
+
+.supplement-image-caption {
+  height: 40px;
+}
+
+.fa {
+  min-width: 18px;
+}
+
