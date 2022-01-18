@@ -5,6 +5,7 @@
 // scss-lint:disable IdSelector
 // scss-lint:disable HexNotation
 // scss-lint:disable ColorVariable
+// scss-lint:disable ColorKeyword
 
 @import '../_sass/bourbon/bourbon';
 @import '../_sass/base/base';
@@ -129,12 +130,11 @@ $large-display: new-breakpoint(min-width 1200px $large-display-columns);
   }
 
   #main-banner-image {
+    @include span-columns(8);
     float: left;
     line-height: $base-font-size;
     margin-right: 1%;
     margin-top: $base-line-height;
-
-    @include span-columns(8);
 
     @include media($medium-display) {
       margin-right: 0.9%;
@@ -147,11 +147,10 @@ $large-display: new-breakpoint(min-width 1200px $large-display-columns);
   }
 
   #top-right-banner-image {
+    @include span-columns(4);
     line-height: $base-font-size;
     margin-bottom: 0.9%;
     margin-right: 0;
-
-    @include span-columns(4);
 
     @include media($medium-display) {
       margin-bottom: 0.7%;
@@ -165,8 +164,8 @@ $large-display: new-breakpoint(min-width 1200px $large-display-columns);
   }
 
   #bottom-right-banner-image {
-    line-height: $base-font-size;
     @include span-columns(4);
+    line-height: $base-font-size;
     margin-right: 0;
     @include media($medium-display) {
 
@@ -424,14 +423,13 @@ body {
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
 
   .right-icon {
+    float: right;
+
     a {
       color: inherit;
       font-size: $base-font-size * 0.75;
     }
-
-    float: right;
   }
-
 }
 
 @mixin page-meta() {
@@ -555,10 +553,9 @@ body {
   margin-bottom: 10px;
 
   @include media($large-display) {
+    @include span-columns(5.7);
     height: 550px;
     overflow: hidden;
-    @include span-columns(5.7);
-
   }
 
   @include media($medium-display) {
@@ -754,7 +751,7 @@ a.post-list-link {
   border-radius: $radius;
 }
 
-@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+@mixin box-shadow($top, $left, $blur, $color, $inset: '') {
   -webkit-box-shadow: $top $left $blur $color #{$inset};
   -moz-box-shadow: $top $left $blur $color #{$inset};
   box-shadow: $top $left $blur $color #{$inset};
@@ -771,14 +768,11 @@ a.post-list-link {
 
   .paper-image-small {
     @include span-columns(2.5);
+    @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
+    @include border-radius(3px);
     margin-bottom: 20px;
     margin-right: 20px;
     margin-top: 5px;
-    @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
-    @include border-radius(3px);
-
-    @include media($large-display) {
-    }
 
     @include media($medium-display) {
       @include span-columns(3.5);
@@ -792,11 +786,11 @@ a.post-list-link {
 
   .project-image-small {
     @include span-columns(1);
+    @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
+    @include border-radius(3px);
     margin-bottom: 20px;
     margin-right: 20px;
     margin-top: 5px;
-    @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
-    @include border-radius(3px);
 
     @include media($small-display) {
       display: none;
@@ -865,12 +859,6 @@ footer {
   @include span-columns(12);
   @include omega();
 
-  .footer-content {
-    @include span-columns(12);
-    @include omega();
-    @include single-column-content();
-  }
-
   $footer-background: $base-background-color;
   $footer-color: black;
   $footer-link-color: $footer-color; //transparentize($footer-color, .6);
@@ -881,6 +869,12 @@ footer {
   margin-top: 15px;
   padding-top: 15px;
   width: 100%;
+
+  .footer-content {
+    @include span-columns(12);
+    @include omega();
+    @include single-column-content();
+  }
 
   .logo-footer-svg {
     height: 50px;
