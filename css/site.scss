@@ -1,6 +1,11 @@
 ---
 ---
  {
+  // scss-lint:disable LeadingZero
+  // scss-lint:disable IdSelector
+  // scss-lint:disable HexNotation
+  // scss-lint:disable ColorVariable
+
   @import '../_sass/bourbon/bourbon';
   @import '../_sass/base/base';
   @import '../_sass/neat/neat';
@@ -29,30 +34,32 @@
     width: 80px;
 
     &:last-child {
-      margin-right: 0px;
+      margin-right: 0;
     }
 
     a {
-      display: block;
-      height: 28px;
-      padding: 3px 0px;
-      color: $dark-blue;
-
       border-bottom: 2px $color solid;
+      color: $dark-blue;
+      display: block;
       height: 30px;
+      padding: 3px 0;
+
       //background-color: #444;
 
-      transition-property: background-color, color;
-      transition-duration: 500ms;
-      transition-timing-function: ease;
       transition-delay: 25ms;
+      transition-duration: 500ms;
+      transition-property: background-color, color;
+      transition-timing-function: ease;
 
-      &:focus, &:hover, &:active, &.active {
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
         //background-color: darken( $color, 20% );
         //color: #2C3E50;
         //color: darken( $color, 20% );
-        height: 30px;
         border-bottom: 5px $color solid;
+        height: 30px;
       }
     }
 
@@ -68,15 +75,15 @@
   }
 
   .nav-icon {
-    margin-right: 0.2em;
     display: inline-block;
+    margin-right: 0.2em;
 
     @include media($medium-display) {
-      margin-right: 0em;
+      margin-right: 0;
     }
 
     @include media($small-display) {
-      margin-right: 0em;
+      margin-right: 0;
     }
   }
 
@@ -96,63 +103,70 @@
   .banner {
     display: block;
     //height: 40px;
-    margin-top: 40px;
     margin-bottom: 40px;
+    margin-top: 40px;
     //margin-bottom: 20px;
     //padding-bottom:20px;
-    width: 100%;
     min-height: 20px;
+    width: 100%;
 
     img {
       border: 2px solid $dark-blue;
     }
 
     .home-image {
-      padding-top: 50px;
-      padding-bottom: 50px;
-      padding-left: 0px;
-      padding-right: 0px;
-      width: 100%;
       margin-bottom: 250px;
+      padding-bottom: 50px;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 50px;
+      width: 100%;
+
       @include media($small-display) {
         margin-bottom: 100px;
       }
     }
 
-    #left-banner-image-title, #top-right-banner-image-title, #bottom-right-banner-image-title {
+    #left-banner-image-title,
+    #top-right-banner-image-title,
+    #bottom-right-banner-image-title {
       line-height: $base-line-height;
     }
 
     .banner-image-title {
+      color: #3376A0;
+      display: block;
       font-family: $condensed-font-family;
       font-weight: 500;
-      color: #3376A0;
       margin-left: 2px;
-      display: block;
       max-width: 95%;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+
       @include media($small-display) {
         display: none;
       }
     }
 
     #main-banner-image {
-      line-height: $base-font-size;
-      @include span-columns(8);
       float: left;
-      margin-top: $base-line-height;
+      line-height: $base-font-size;
       margin-right: 1%;
+      margin-top: $base-line-height;
       //    margin-bottom: 5px;
       //	  padding: 15px;
       //    padding-bottom: 44px;
       //	  border: 2px solid $dark-blue;
+
+      @include span-columns(8);
+
       @include media($medium-display) {
         margin-right: 0.9%;
         //      padding: 18px;
         //      padding-bottom: 48px;
       }
+
       @include media($small-display) {
         @include span-columns(12 of 12);
         margin-bottom: 1.5%;
@@ -164,15 +178,18 @@
 
     #top-right-banner-image {
       line-height: $base-font-size;
-      @include span-columns(4);
-      margin-right: 0;
       margin-bottom: 0.9%;
+      margin-right: 0;
       //	  padding: 10px;
       //	  border: 2px solid $dark-blue;
+
+      @include span-columns(4);
+
       @include media($medium-display) {
         margin-bottom: 0.7%;
 
       }
+
       @include media($small-display) {
         @include span-columns(49 of 100);
         margin-right: 2%;
@@ -203,31 +220,31 @@
     width: 100%;
 
     @include media($small-display) {
-      margin-left: 0px;
       height: 35px;
+      margin-left: 0;
     }
   }
 
   .navigation-buttons {
     display: block;
     float: left;
-    padding-top: 65px;
     padding-bottom: 15px;
+    padding-top: 65px;
 
     @include media($small-display) {
-      margin-left: 0px;
-      padding-top: 0px;
+      margin-left: 0;
       padding-bottom: 15px;
+      padding-top: 0;
     }
   }
 
   .logo {
     float: right;
-    margin-right: 0px;
+    margin-right: 0;
 
     @include media($small-display) {
+      margin-right: 0;
       padding-top: 5px;
-      margin-right: 0px;
     }
   }
 
@@ -246,16 +263,16 @@
 
 
   body {
+    margin: 30px auto 0;
     width: 750px;
-    margin: 30px auto 0px auto;
 
     @include media($large-display) {
       width: 1200px;
     }
 
     @include media($small-display) {
+      margin: 10px auto 0;
       width: 300px;
-      margin: 10px auto 0px auto;
     }
   }
 
@@ -293,7 +310,7 @@
   }
 
   .award {
-    color: $publication-color
+    color: $publication-color;
   }
 
   /*@mixin page-title($color) {
@@ -301,7 +318,7 @@
     @include omega();
     color: $color;
     background-color: tint($color,95%);
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0 0 0;
     border-bottom: 4px $color solid;
     margin-bottom: 20px;
 
@@ -311,7 +328,7 @@
       font-style: $page-title-font-style;
       font-size: $page-title-font-size;
       border-bottom: none;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
   }*/
 
@@ -320,17 +337,17 @@
     @include omega();
     color: $color;
     //background-color: tint($color,95%);
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     //border-bottom: 4px $color solid;
     margin-bottom: 20px;
 
     h1 {
+      border-bottom: 0;
       font-family: $page-title-font-family;
-      font-weight: $page-title-font-weight;
-      font-style: $page-title-font-style;
       font-size: $page-title-font-size;
-      border-bottom: none;
-      margin-bottom: 0px;
+      font-style: $page-title-font-style;
+      font-weight: $page-title-font-weight;
+      margin-bottom: 0;
     }
   }
 
@@ -404,16 +421,17 @@
 
   @mixin dotted-link-underline() {
     a {
-      -moz-transition: border-bottom-color 0.2s ease-in-out;
-      -webkit-transition: border-bottom-color 0.2s ease-in-out;
-      -ms-transition: border-bottom-color 0.2s ease-in-out;
-      transition: border-bottom-color 0.2s ease-in-out;
       //color: #444;
       //color: $blue2;
+      border-bottom: dotted 1px #E64C3C; //note: use of :after code below unfortuenatly doesn't work with line breaks... using fall-back
       position: relative;
       text-decoration: none;
-      border-bottom: dotted 1px #E64C3C; //note: use of :after code below unfortuenatly doesn't work with line breaks... using fall-back
+      -moz-transition: border-bottom-color 0.2s ease-in-out;
+      -ms-transition: border-bottom-color 0.2s ease-in-out;
+      -webkit-transition: border-bottom-color 0.2s ease-in-out;
+      transition: border-bottom-color 0.2s ease-in-out;
     }
+
     a:hover {
       border-bottom-color: transparent;
     }
@@ -437,16 +455,17 @@
 
   @mixin reverse-dotted-link-underline() {
     a {
-      -moz-transition: border-bottom-color 0.2s ease-in-out;
-      -webkit-transition: border-bottom-color 0.2s ease-in-out;
-      -ms-transition: border-bottom-color 0.2s ease-in-out;
-      transition: border-bottom-color 0.2s ease-in-out;
       //color: #444;
       //color: $blue2;
+      border-bottom: dotted 1px transparent;
       position: relative;
       text-decoration: none;
-      border-bottom: dotted 1px transparent;
+      -moz-transition: border-bottom-color 0.2s ease-in-out;
+      -ms-transition: border-bottom-color 0.2s ease-in-out;
+      -webkit-transition: border-bottom-color 0.2s ease-in-out;
+      transition: border-bottom-color 0.2s ease-in-out;
     }
+
     a:hover {
       border-bottom-color: #E64C3C;
     }
@@ -501,10 +520,10 @@
 
     p {
       a {
+        border-bottom: dotted 1px #E64C3C;
         color: #444;
         position: relative;
         text-decoration: none;
-        border-bottom: dotted 1px #E64C3C;
       }
 
       //    a:after{
@@ -619,10 +638,9 @@
 
 
   .blog-teaser {
-
-
     float: left;
     //background-color: lightgrey;
+    margin-bottom: 10px;
 
     @include media($large-display) {
       height: 550px;
@@ -630,155 +648,150 @@
       @include span-columns(5.7);
 
     }
+
     @include media($medium-display) {
       @include span-columns(12);
     }
+
     @include media(small-display) {
       @include span-columns(12);
     }
-    margin-bottom: 10px;
-  
   }
 
-  .blog-teaser:nth-child(even)
-  {
+  .blog-teaser:nth-child(even) {
     @include media($large-display) {
-      float:right;
+      float: right;
     }
   }
 
   a.project-website {
     @include reverse-dotted-link-underline;
+    color: $dark-blue;
     font-family: $condensed-font-family;
     font-size: 1em;
     font-weight: 700;
-    color: $dark-blue;
   }
 
   .all-news-link {
     @include dotted-link-underline;
 
     a {
+      color: $dark-blue;
       font-family: $condensed-font-family;
       font-size: 1em;
       font-weight: 700;
-      color: $dark-blue;
     }
   }
 
 
 
-    a.post-list-link {
-      font-style: italic;
-      font-size: 0.9em;
-      color: #444;
-      position: relative;
-      text-decoration: none;
-    }
+  a.post-list-link {
+    color: #444;
+    font-size: 0.9em;
+    font-style: italic;
+    position: relative;
+    text-decoration: none;
+  }
 
-    //  a.post-list-link:after{
-    //    position: absolute;
-    //    left: 0px;
-    //    bottom: 0;
-    //    content: '';
-    //    width: 100%;
-    //    border-bottom-width: 1px;
-    //    //border-bottom-style: solid;
-    //  }
+  //  a.post-list-link:after{
+  //    position: absolute;
+  //    left: 0;
+  //    bottom: 0;
+  //    content: '';
+  //    width: 100%;
+  //    border-bottom-width: 1px;
+  //    //border-bottom-style: solid;
+  //  }
 
-    .post-list-item {
+  .post-list-item {
+    margin-bottom: 10px;
+
+    p {
       margin-bottom: 10px;
-
-      p {
-        margin-bottom: 10px;
-        //display: inline;
-      }
-
-    
-
-      b {
-        color: #3376A0;
-      }
-      
+      //display: inline;
     }
 
-    // nested fonts in the blog posts should be
-    .post-list-item h2 {
-      font-size: $base-font-size;
+    b {
+      color: #3376A0;
+    }
+  }
+
+  // nested fonts in the blog posts should be
+  .post-list-item h2 {
+    font-size: $base-font-size;
+  }
+
+  .post-list-item h3 {
+    font-size: $base-font-size;
+  }
+
+  .post-list-item h4 {
+    font-size: $base-font-size;
+  }
+
+  .post-list-title {
+    color: $dark-blue;// #F1F2F2;
+    //color: lighten(#F1F2F2,0.5);
+    //background: lighten($home-color, 30%);
+    //border-color: $home-color;
+    //font-family: $sans-serif-font-family;
+    display: block;
+    font-family: $condensed-font-family;
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding: 5px;
+    padding-left: 0;
+
+    .right-text {
+      font-size: 1em;
+      font-weight: 400;
+      padding-left: 10px;
+      white-space: nowrap;
     }
 
-    .post-list-item h3 {
-      font-size: $base-font-size;
-    }
-
-    .post-list-item h4 {
-      font-size: $base-font-size;
-    }
-
-    .post-list-title {
-      color: $dark-blue;// #F1F2F2;
-      //color: lighten(#F1F2F2,0.5);
-      //background: lighten($home-color, 30%);
-      
-      //border-color: $home-color;
-      //font-family: $sans-serif-font-family;
-      font-family: $condensed-font-family;
-      font-weight: 700;
+    a {
+      border-bottom: 2px $home-color solid;
+      color: $dark-blue;
+      display: flex;
       font-style: normal;
-      display: block;
-      font-size: 1.2em;
-      padding: 5px;
-      padding-left: 0px;
-      margin-bottom: 15px;
-  
+      justify-content: space-between;
+      //display: block;
+      //height: 28px;
+      padding: 3px 0;
 
+      //height: 30px;
+      //background-color: #444;
 
-    
-      .right-text {
-        font-size: 1em; 
-        font-weight: 400;
-        white-space:nowrap;
-        padding-left: 10px;
-      }
+      transition-delay: 25ms;
+      transition-duration: 500ms;
+      transition-property: background-color, color;
+      transition-timing-function: ease;
 
-      a {
-        display: flex;
-        justify-content: space-between;
-        font-style: normal;
-        //display: block;
-        //height: 28px;
-        padding: 3px 0px;
-        color: $dark-blue;
-    
-        border-bottom: 2px $home-color solid;
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
         //height: 30px;
-        //background-color: #444;
-    
-        transition-property: background-color, color;
-        transition-duration: 500ms;
-        transition-timing-function: ease;
-        transition-delay: 25ms;
-    
-        &:focus, &:hover, &:active, &.active {
-          //height: 30px;
-          border-bottom: 5px $home-color solid;
-        }
+        border-bottom: 5px $home-color solid;
       }
-    
     }
 
-    /*.post-list-excerpt {
-        height:160px;
-        overflow:hidden;
-    }*/
+  }
+
+  /*.post-list-excerpt {
+      height:160px;
+      overflow:hidden;
+  }*/
 
 
 
   // author and date for a blog post
   .post-meta {
+    color: #636363;
     font-size: 14px;
     font-style: italic;
-    color: #636363;
   }
 
   .publication-content {
@@ -862,9 +875,9 @@
   }
 
   .paper-list-block {
-    min-height: 120px;
-    margin-bottom: 20px;
     display: block;
+    margin-bottom: 20px;
+    min-height: 120px;
 
     @include media($medium-display) {
       margin-bottom: 40px;
@@ -872,14 +885,13 @@
 
     .paper-image-small {
       @include span-columns(2.5);
-      margin-top: 5px;
-      margin-right: 20px;
       margin-bottom: 20px;
+      margin-right: 20px;
+      margin-top: 5px;
       @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
       @include border-radius(3px);
 
-      @include media($large-display)
-      {
+      @include media($large-display) {
       }
 
       @include media($medium-display) {
@@ -895,9 +907,9 @@
     .project-image-small {
       @include span-columns(1);
       //float: left;
-      margin-top: 5px;
-      margin-right: 20px;
       margin-bottom: 20px;
+      margin-right: 20px;
+      margin-top: 5px;
       @include box-shadow(1px, 1px, 4px, transparentize(black, 0.75));
       @include border-radius(3px);
 
@@ -917,15 +929,15 @@
       margin: 0 0 0 1.3em;
 
       @include media($small-display) {
-        margin: 0.5em 0 2em 0;
+        margin: 0.5em 0 2em;
         width: 100%;
       }
     }
 
     p {
       @include span-columns(9);
-      font-size: 0.9em;
       font-family: $light-condensed-font-family;
+      font-size: 0.9em;
       font-weight: 300;
 
       @include media($medium-display) {
@@ -946,7 +958,7 @@
         }
 
         a:after {
-          border-bottom-width: 0px;
+          border-bottom-width: 0;
         }
       }
 
@@ -1027,10 +1039,10 @@
     $footer-disclaimer-color: $footer-color; //transparentize($footer-color, .6);
 
     background: $footer-background;
-    width: 100%;
+    border-top: 4px solid $footer-border-color;
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 4px solid $footer-border-color;
+    width: 100%;
 
     .logo-footer-svg {
       height: 50px;
@@ -1065,29 +1077,29 @@
 
     ul {
       display: inline-block;
-      margin-right: auto;
-      margin-left: auto;
       margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    @mixin footer-list($padding-default,$padding-small) {
+    @mixin footer-list($padding-default, $padding-small) {
       float: right;
       position: relative;
       left: -50%;
 
       ul {
-        position: relative;
         left: 50%;
+        position: relative;
 
         li {
-          opacity: 0.73;
           float: left;
-          padding-right: $padding-default;
+          opacity: 0.73;
           padding-left: $padding-default;
+          padding-right: $padding-default;
 
           @include media(small-display) {
-            padding-right: $padding-small;
             padding-left: $padding-small;
+            padding-right: $padding-small;
           }
 
           &:last-child {
@@ -1123,11 +1135,10 @@
       opacity: 0.33;
 
       p {
-        text-align: center;
-
         font-family: $sans-serif-font-family;
         font-size: $footer-content-font-size * 1.2;
         font-weight: 700;
+        text-align: center;
       }
     }
   }
@@ -1143,25 +1154,25 @@
   }
 
   .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
     height: 0;
+    padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+    position: relative;
   }
 
   iframe:not(.skip-absolute) {
+    height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
   }
 
   .centered {
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -163px;
     position: fixed;
     top: 50%;
-    left: 50%;
-    margin-top: -163px;
-    margin-left: -100px;
   }
 
   .logo-404-svg {
@@ -1169,41 +1180,42 @@
   }
 
   .message-404 {
-    text-align: center;
-    margin-top: 20px;
+    color: black;
     font-family: $page-content-font-family;
     font-size: $page-content-font-size * 2;
-    font-weight: 700;
     font-style: normal;
-    color: black;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
 
     a {
       color: black;
 
-      &:hover, &:active, &:visited {
+      &:hover,
+      &:active,
+      &:visited {
         color: black;
       }
     }
   }
 
   .rule {
-    display: block;
     border-top: 4px solid $footer-border-color;
+    display: block;
+    height: 24px;
     margin-left: 100px;
     margin-right: 100px;
-    height: 24px;
-    padding-top: 20px;
     padding-bottom: 5px;
+    padding-top: 20px;
   }
 
   .publication-content-main {
     .citation {
       p {
         .paper-title {
-          font-weight: 700;
-          font-family: $condensed-font-family;
           color: $blue2;
-
+          font-family: $condensed-font-family;
+          font-weight: 700;
         }
 
         .paper-citation {
@@ -1225,28 +1237,29 @@
     }
 
     h1 {
-      padding-top: 0px;
+      padding-top: 0;
 
     }
+
     h1:first-child {
-      margin-top: 0px;
+      margin-top: 0;
     }
 
     .video {
       p {
-        font-size: 0.9em;
         color: $blue2;
+        font-size: 0.9em;
       }
     }
   }
 
   .paper-image-small-aside {
-    width: auto;
+    border: 2px solid $dark-blue;
     height: auto;
     //float: left;
-    margin-right: 20px;
     margin-bottom: 20px;
-    border: 2px solid $dark-blue;
+    margin-right: 20px;
+    width: auto;
     //@include box-shadow( 1px, 1px, 4px, transparentize( black, 0.75) );
     //@include border-radius( 3px );
 
@@ -1267,58 +1280,59 @@
 
   // publication's bib entry
   pre.bibtex {
-    padding: 20px;
-    overflow-x: auto;
     background: #f3f3f3;
     color: #636363;
+    overflow-x: auto;
+    padding: 20px;
   }
 
   // team page in separate sass file
   @import '../_sass/team';
 
   .social {
-    padding: 15px;
     display: block;
     margin: auto;
+    padding: 15px;
   }
 
 
   // Extra, copyright-free images at the bottom of a publications page.
   .supplement-image {
-    border: 2px solid $base-font-color
+    border: 2px solid $base-font-color;
   }
 
   .supplement-image-div {
+    max-width: 100%;
     padding-bottom: 15px;
     width: 350px;
-    max-width: 100%;
   // height: 310px;
-      @include media($large-display) {
-        float: right
-      }
+
+    @include media($large-display) {
+      float: right;
+    }
   }
 
   .supplement-image-div:nth-of-type(2n) {
-      @include media($large-display) {
-        float: left
-      }
+    @include media($large-display) {
+      float: left;
+    }
   }
 
   .supplement-image-div a:link {
-    text-decoration: none;
     color: #2B2F33;
+    text-decoration: none;
   }
 
   .supplement-image-div a:visited {
-    text-decoration: none;
     color: #2B2F33;
+    text-decoration: none;
   }
 
   .supplement-image-caption {
     height: 40px;
   }
 
-  .fa{
-    min-width: 18px
+  .fa {
+    min-width: 18px;
   }
  }
