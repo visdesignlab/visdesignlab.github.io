@@ -6,6 +6,8 @@
 // scss-lint:disable HexNotation
 // scss-lint:disable ColorVariable
 // scss-lint:disable ColorKeyword
+// scss-lint:disable NestingDepth
+// scss-lint:disable SelectorDepth
 
 @import '../_sass/bourbon/bourbon';
 @import '../_sass/base/base';
@@ -533,6 +535,10 @@ body {
 
 .post-meta {
   @include page-meta();
+
+  color: #636363;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .blog-page {
@@ -567,7 +573,7 @@ body {
   }
 }
 
-a.project-website {
+.project-website {
   @include reverse-dotted-link-underline;
   color: $dark-blue;
   font-family: $condensed-font-family;
@@ -588,7 +594,7 @@ a.project-website {
 
 
 
-a.post-list-link {
+.post-list-link {
   color: #444;
   font-size: 0.9em;
   font-style: italic;
@@ -606,19 +612,13 @@ a.post-list-link {
   b {
     color: #3376A0;
   }
-}
 
-// nested fonts in the blog posts should be
-.post-list-item h2 {
-  font-size: $base-font-size;
-}
+  h2,
+  h3,
+  h4 {
+    font-size: $base-font-size;
 
-.post-list-item h3 {
-  font-size: $base-font-size;
-}
-
-.post-list-item h4 {
-  font-size: $base-font-size;
+  }
 }
 
 .post-list-title {
@@ -662,15 +662,6 @@ a.post-list-link {
 
 }
 
-
-
-// author and date for a blog post
-.post-meta {
-  color: #636363;
-  font-size: 14px;
-  font-style: italic;
-}
-
 .publication-content {
   @include page-content();
   @include span-columns(12);
@@ -680,6 +671,25 @@ a.post-list-link {
 .publication-content-main {
   @include page-content();
   @include span-columns(8);
+
+  .citation {
+    p {
+      .paper-title {
+        color: $blue2;
+        font-family: $condensed-font-family;
+        font-weight: 700;
+      }
+
+      .paper-citation {
+        font-family: $italicized-font-family;
+      }
+    }
+
+  }
+
+  i {
+    color: $blue2;
+  }
 }
 
 .publication-content-aside {
@@ -701,8 +711,24 @@ a.post-list-link {
     @include media($large-display) {
       width: 100%;
     }
+
+    p {
+      color: $blue2;
+      font-size: 0.9em;
+    }
   }
 
+  i {
+    color: $blue2;
+  }
+
+  h1 {
+    padding-top: 0;
+  }
+
+  h1:first-child {
+    margin-top: 0;
+  }
 }
 
 .publications-content {
@@ -784,7 +810,7 @@ a.post-list-link {
     }
   }
 
-  p.pubs {
+  .pubs {
     margin: 0 0 0 1.3em;
 
     @include media($small-display) {
@@ -816,7 +842,7 @@ a.post-list-link {
         font-weight: 700;
       }
 
-      a:after {
+      a::after {
         border-bottom-width: 0;
       }
     }
@@ -834,10 +860,10 @@ a.post-list-link {
   font-size: $page-content-font-size * 0.8;
   font-weight: 300;
   margin-bottom: 10px;
-}
 
-.talk p {
-  margin-bottom: 0;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 $footer-border-color: $light-gray;
@@ -1028,50 +1054,6 @@ iframe:not(.skip-absolute) {
   padding-top: 20px;
 }
 
-.publication-content-main {
-  .citation {
-    p {
-      .paper-title {
-        color: $blue2;
-        font-family: $condensed-font-family;
-        font-weight: 700;
-      }
-
-      .paper-citation {
-        font-family: $italicized-font-family;
-      }
-    }
-
-  }
-
-  i {
-    color: $blue2;
-  }
-
-}
-
-.publication-content-aside {
-  i {
-    color: $blue2;
-  }
-
-  h1 {
-    padding-top: 0;
-
-  }
-
-  h1:first-child {
-    margin-top: 0;
-  }
-
-  .video {
-    p {
-      color: $blue2;
-      font-size: 0.9em;
-    }
-  }
-}
-
 .paper-image-small-aside {
   border: 2px solid $dark-blue;
   height: auto;
@@ -1090,7 +1072,7 @@ iframe:not(.skip-absolute) {
 }
 
 // publication's bib entry
-pre.bibtex {
+.bibtex {
   background: #f3f3f3;
   color: #636363;
   overflow-x: auto;
@@ -1120,22 +1102,17 @@ pre.bibtex {
   @include media($large-display) {
     float: right;
   }
+
+  a {
+    color: #2B2F33;
+    text-decoration: none;
+  }
 }
 
 .supplement-image-div:nth-of-type(2n) {
   @include media($large-display) {
     float: left;
   }
-}
-
-.supplement-image-div a:link {
-  color: #2B2F33;
-  text-decoration: none;
-}
-
-.supplement-image-div a:visited {
-  color: #2B2F33;
-  text-decoration: none;
 }
 
 .supplement-image-caption {
@@ -1145,4 +1122,3 @@ pre.bibtex {
 .fa {
   min-width: 18px;
 }
-
