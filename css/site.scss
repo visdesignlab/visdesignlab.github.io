@@ -64,7 +64,6 @@ $large-display: new-breakpoint(min-width 1200px $large-display-columns);
   @include media($small-display) {
     margin-right: 40px;
     width: auto;
-
   }
 }
 
@@ -156,7 +155,6 @@ $large-display: new-breakpoint(min-width 1200px $large-display-columns);
 
     @include media($medium-display) {
       margin-bottom: 0.7%;
-
     }
 
     @include media($small-display) {
@@ -170,7 +168,6 @@ $large-display: new-breakpoint(min-width 1200px $large-display-columns);
     line-height: $base-font-size;
     margin-right: 0;
     @include media($medium-display) {
-
     }
     @include media($small-display) {
       @include span-columns(49 of 100);
@@ -227,7 +224,6 @@ $large-display: new-breakpoint(min-width 1200px $large-display-columns);
   @include clearfix;
 }
 
-
 body {
   margin: 30px auto 0;
   width: 750px;
@@ -250,7 +246,6 @@ body {
   @include navigation-button($team-color);
 }
 
-
 .publications-button {
   @include navigation-button($home-color);
   width: 120px;
@@ -260,7 +255,6 @@ body {
   @include navigation-button($team-color);
 }
 
-
 .culture-button {
   @include navigation-button($home-color);
 }
@@ -268,8 +262,6 @@ body {
 .positions-button {
   @include navigation-button($team-color);
 }
-
-
 
 .project-button {
   @include navigation-button($home-color);
@@ -295,7 +287,6 @@ body {
     margin-bottom: 0;
   }
 }
-
 
 @mixin subpage-title($color) {
   @include page-title($color);
@@ -390,7 +381,6 @@ body {
   }
 }
 
-
 @mixin page-content() {
   // for small displays as single column
   @include single-column-content();
@@ -451,7 +441,6 @@ body {
   font-size: $page-content-font-size;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
-
 
 .project-content {
   @include page-content();
@@ -547,7 +536,6 @@ body {
   @include omega();
 }
 
-
 .blog-teaser {
   float: left;
   margin-bottom: 10px;
@@ -592,8 +580,6 @@ body {
   }
 }
 
-
-
 .post-list-link {
   color: #444;
   font-size: 0.9em;
@@ -617,7 +603,6 @@ body {
   h3,
   h4 {
     font-size: $base-font-size;
-
   }
 }
 
@@ -659,7 +644,6 @@ body {
       border-bottom: 5px $home-color solid;
     }
   }
-
 }
 
 .publication-content {
@@ -684,7 +668,6 @@ body {
         font-family: $italicized-font-family;
       }
     }
-
   }
 
   i {
@@ -748,7 +731,6 @@ body {
   @include page-meta();
 }
 
-
 .download-content {
   @include page-content();
 }
@@ -756,7 +738,6 @@ body {
 .download-meta {
   @include page-meta();
 }
-
 
 @mixin desaturation($percentage) {
   filter: grayscale($percentage);
@@ -832,7 +813,6 @@ body {
     @include media($small-display) {
       width: 100%;
     }
-
 
     .paper-title {
       @include reverse-dotted-link-underline;
@@ -917,7 +897,6 @@ footer {
     @include media($small-display) {
       display: none;
     }
-
   }
 
   ul {
@@ -987,7 +966,6 @@ footer {
     }
   }
 }
-
 
 .video {
   margin: auto;
@@ -1062,7 +1040,6 @@ iframe:not(.skip-absolute) {
   width: auto;
 }
 
-
 .institution-logo {
   height: 80px;
 
@@ -1087,7 +1064,6 @@ iframe:not(.skip-absolute) {
   margin: auto;
   padding: 15px;
 }
-
 
 // Extra, copyright-free images at the bottom of a publications page.
 .supplement-image {
