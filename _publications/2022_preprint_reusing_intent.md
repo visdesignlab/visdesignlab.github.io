@@ -100,4 +100,4 @@ We demonstrate this specification using an interactive visualization system that
 
 # Acknowledgements
 
-We wish to thank the reviewers for their feedback on our submission. We would also like to thank derya akbaba and Jack Wilburn from Visualization Design Lab for their help with feedback interviews. We gratefully acknowledge funding by the National Science Foundation (IIS 1751238).
+We wish to thank the reviewers for their feedback on our submission. We would also like to thank Derya Akbaba and Jack Wilburn from Visualization Design Lab for their help with feedback interviews. We gratefully acknowledge funding by the National Science Foundation (IIS 1751238).
