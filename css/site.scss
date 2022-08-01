@@ -10,10 +10,8 @@
 // scss-lint:disable SelectorDepth
 
 @import '../_sass/bourbon/bourbon';
-@import '../_sass/base/base';
+@import '../_sass/base';
 @import '../_sass/neat/neat';
-
-@import '../_sass/base/cards';
 
 $small-display-columns: 4;
 $medium-display-columns: 12;
