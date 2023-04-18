@@ -81,22 +81,6 @@ pdf: 2019_aci_composer.pdf
  # abslink: http://vials.io/talk/
   # Defaults to a download icon, use this if you want a link-out icon
   #linksym: true
-# Supplemental, cc-by images. Make caption brief (at most 60 chars)
-images:
-- path: 2019_aci_composer_comparison.jpg
-  caption: Composer interface showing comparision of two cohorts, one that has had surgery and one that has had injection. 
-- path: 2019_aci_composer_co1_measure.jpg
-  caption: Composer interface showing PROMIS scores for cohort 1. 
-- path: 2019_aci_composer_quantiles.jpg
-  caption: Composer interface showing quantiles for scores for cohort 2. 
-- path: 2019_aci_composer_quantiles_2.jpg
-  caption: Composer interface showing quantiles for scores for cohort 1. 
-# - path: 2020_infovis_insights_summary_view.png
-#   caption: Trevo summary view shows aggregated trait values for groups of species. 
-# - path: 2020_infovis_insights_pair_view.png
-#   caption: Trevo Pair view ranks pairs of species to identify known evolutionary patterns.
-# - path: 2020_infovis_insights_pair_hover.png
-#   caption: Pair view showing hover interaction
 
 # Link to the repository where the code is hosted
 code: https://github.com/visdesignlab/Composer/
