@@ -8,7 +8,7 @@ shortname: Thesis-lisnic
 image: 2025_thesis_lisnic.png
 
 authors:
-- lange
+- lisnic
 advisors: Marina Kogan, Alexander Lex, Kate Isaacs, Vineet Pandey, Crystal Lee
 year: 2025
 month: May
