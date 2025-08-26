@@ -11,7 +11,7 @@ role: faculty
 email: alex@sci.utah.edu
 image: /assets/images/people/lex.jpg
 organization: University of Utah
-position: Associate Professor
+position: Professor
 degree: PhD, MSc
 website: /team/lex/
 interests: Data Visualization, Visualization Tools, Provenance and Reproducibility, Evaluation, Life Science Applications
@@ -112,7 +112,7 @@ My research is on data visualization and human computer interaction. I design, b
 
 ## Bio
 
-I am an Associate Professor of Computer Science at the Scientific Computing and Imaging Institute and the Kahlert School of Computing at the University of Utah. I direct the Visualization Design Lab where we develop visualization methods and systems to help solve today’s scientific problems.
+I am a Professor of Computer Science at the Scientific Computing and Imaging Institute and the Kahlert School of Computing at the University of Utah. I direct the Visualization Design Lab where we develop visualization methods and systems to help solve today’s scientific problems.
 
 I am the recipient of an NSF CAREER award and multiple best paper awards or honorable mentions at IEEE VIS, ACM CHI, and other conferences. I also received a best dissertation award from my alma mater. I co-founded [Datavisyn](http://datavisyn.io), a startup company developing visualization solutions for the pharmaceutical industry. I am an associate editor for IEEE TVCG and IEEE CG&A, and I served as area papers chair for IEEE VIS in 2021 and 2023. In addition to writing papers, our lab publishes a lot of visualization software. My most popular tool is [UpSet, a set visualization technique](http://upset.app/). Other tools include [reVISit](https://revisit.dev/), a platform for designing online user sutdies, [MultiNet](https://multinet.app/), a network visualization platform and [trrack](https://github.com/trrack/), a library for tracking provenance in interactive applications. You can find other software on our [GitHub Page](https://github.com/visdesignlab).
 
