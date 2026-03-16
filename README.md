@@ -1,4 +1,9 @@
-# Vis Design Lab Website
+# Legacy Vis Design Lab Website
+
+This is the pre-2025 version of the VDL website. It is no longer maintained but available for archival purposes. 
+For the current website, visit https://visdesignlab.net and the repository at https://github.com/vdl-website/vdl-website.github.io
+
+# Old Content
 
 The Vis Design Lab website is based on the Caleydo website and built with
 [Jekyll](http://jekyllrb.com).
